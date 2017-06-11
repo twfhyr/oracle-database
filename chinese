@@ -1,5 +1,4 @@
 中文乱码：安装完成oracle database 11g和pl/sql developer后，创建包含中文的表Students,查询的时候出现中文显示“？？？”的问题。
 解决方案：出现这种问题一般是数据库字符集与客户端（即操作系统）字符集不一致，使得无法正常显示中文。首先使用
-select * from nls_database_parameters查询数据库字符集编码类型，然后创建系统环境变量nls_lang，取值与数据库字符集编码
-类型相同。
+select * from nls_database_parameters查询数据库字符集编码类型，然后创建系统环境变量nls_lang，取值与数据库字符集编码类型相同。
 疑问：这样处理之后，查询Students表仍然为乱码。但是我新建了一个包含中文的表，查询显示正常！
